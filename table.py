@@ -17,7 +17,7 @@ class Table:
 
     def insert(self, row_values):
         if len(row_values) != len(self.columns):
-            raise TypeError("Սխալ քանակությամբ արժեքներ")
+            raise TypeError("Wrong count of arguments")
 
         row = dict(zip(self.columns, row_values))
 
@@ -66,11 +66,6 @@ class Table:
             if predicate(row)
         ]
 
-        return result
-
-    def limit(self, n):
-        result = Table(self.columns)
-        result.rows = self.rows[:n]
         return result
 
     def update(self, updates, predicate):
@@ -146,7 +141,7 @@ class Table:
 
         if not common_columns:
             raise ValueError(
-                "JOIN-ի համար ընդհանուր սյունակ չկա"
+                "No match for JOIN"
             )
 
         other_columns = [
@@ -188,8 +183,8 @@ class Table:
 
             # LEFT JOIN
             if left_join and not matches:
- 
-              new_row = [
+
+                new_row = [
                     left_row[column]
                     for column in self.columns
                 ]

@@ -1,6 +1,5 @@
 from table import Table
 
-
 def build_database():
     S = Table(
         ["S#", "Sname", "SCity", "Status"],
@@ -253,7 +252,7 @@ def main():
         )
 
     except ValueError as e:
-        print("Սպասված սխալ:", e)
+        print (e)
 
 
 if __name__ == "__main__":
