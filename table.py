@@ -188,8 +188,8 @@ class Table:
 
             # LEFT JOIN
             if left_join and not matches:
-
-                new_row = [
+ 
+              new_row = [
                     left_row[column]
                     for column in self.columns
                 ]
